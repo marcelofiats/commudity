@@ -16,9 +16,10 @@ return new class extends Migration
         Schema::create('cultures', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name', 120);
+            $table->double('quantity', 15, 3);
             $table->integer('id_unit_type')->unsigned();
             $table->foreign('id_unit_type')->references('id')->on('unit_types');
-            $table->integer('deleted')->unsigned()->default(0);
+            $table->integer('deleted')->unsigned()->nullable();
             $table->timestamps();
         });
     }

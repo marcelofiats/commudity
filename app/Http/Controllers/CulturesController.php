@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Activity;
+use App\Models\Culture;
 use App\Models\Cultures;
 use Illuminate\Http\Request;
 
@@ -12,77 +14,20 @@ class CulturesController extends Controller
     {
         $titlePage = "Cultures";
 
-        $cultures = [
-            'soja',
-            'arroz',
-        ];
+        $cultures = Culture::where('deleted', 0)->get();
 
         return view('listCultures')->with(compact('titlePage', 'cultures'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
+    public function detail($id_culture)
     {
-        //
-    }
+        $titlePage = 'Detalhes';
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
+        $culture =  Culture::where('id', $id_culture)
+            ->with('activities')
+            ->with('unit_type')
+            ->get();
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Cultures  $cultures
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Cultures $cultures)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Cultures  $cultures
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Cultures $cultures)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Cultures  $cultures
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Cultures $cultures)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Cultures  $cultures
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Cultures $cultures)
-    {
-        //
+        return view('detailsCulture')->with(compact('titlePage', 'culture'));
     }
 }

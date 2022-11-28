@@ -17,7 +17,7 @@ class CultureSeeder extends Seeder
     {
         DB::table('cultures')->insert([
             [
-                'name' => 'Sojá',
+                'name' => 'Soja',
                 'id_unit_type' => 1
             ],
             [

@@ -17,4 +17,9 @@ class UnitType extends Model
         'date_created',
         'date_updated'
     ];
+
+    public function Culture() {
+        return $this->belongsTo('App\Models\Culture', 'id_culture');
+    }
+
 }

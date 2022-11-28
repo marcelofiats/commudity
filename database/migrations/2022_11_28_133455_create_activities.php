@@ -19,6 +19,8 @@ return new class extends Migration
             $table->integer('year')->nullable();
             $table->double('area', 15, 2);
             $table->integer('deleted')->unsigned()->default(0);
+            $table->integer('id_culture')->unsigned()->nullable();
+            $table->foreign('id_culture')->references('id')->on('cultures');
             $table->timestamps();
         });
     }

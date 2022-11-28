@@ -18,4 +18,8 @@ class Farm extends Model
         'date_updated',
         'id_producer'
     ];
+
+    function activity() {
+        return $this->belongsToMany("App\Models\Activity", "farms_activities");
+    }
 }

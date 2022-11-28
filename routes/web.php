@@ -15,3 +15,4 @@ use App\Http\Controllers\CulturesController;
 */
 
 Route::get('/', [CulturesController::class, 'index']);
+Route::get('/details/{id_culture}', [CulturesController::class, 'detail']);

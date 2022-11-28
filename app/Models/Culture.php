@@ -18,4 +18,14 @@ class Culture extends Model
         'date_created',
         'date_updated'
     ];
+
+    function unit_type() 
+    {
+        return $this->hasOne("App\Models\UnitType", 'id');
+    }
+
+    function activities() 
+    {
+        return $this->hasMany('App\Models\Activity', 'id_culture');
+    }
 }
