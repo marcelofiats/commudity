@@ -13,7 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('farms_activies', function (Blueprint $table) {
+        Schema::create('farms_activities', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('id_farm')->unsigned();
             $table->foreign('id_farm')->references('id')->on('farms');

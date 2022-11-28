@@ -5,17 +5,17 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Culture extends Model
+class Farm extends Model
 {
     use HasFactory;
 
     protected $fillable = [
         'id',
         'name',
-        'id_unit_type',
-        'data',
+        'city',
         'deleted',
         'date_created',
-        'date_updated'
+        'date_updated',
+        'id_producer'
     ];
 }

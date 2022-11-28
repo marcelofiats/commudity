@@ -16,7 +16,10 @@ return new class extends Migration
         Schema::create('producers', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name', 120);
+            $table->string('phone', 14);
+            $table->string('email', 120);
             $table->string('document', 25)->unique();
+            $table->enum('type_document', ['cpf', 'cnpj'])->default('cpf');
             $table->date('birthday')->nullable();
             $table->integer('deleted')->unsigned()->default(0);
             $table->timestamps();

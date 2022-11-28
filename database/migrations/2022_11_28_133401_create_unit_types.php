@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('unit_types', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name', 120);
+            $table->string('sigle', 3);
             $table->integer('deleted')->unsigned()->default(0);
             $table->timestamps();
         });

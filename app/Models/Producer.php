@@ -5,15 +5,18 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Culture extends Model
+class Producer extends Model
 {
     use HasFactory;
 
     protected $fillable = [
         'id',
         'name',
-        'id_unit_type',
-        'data',
+        'phone',
+        'email',
+        'document',
+        'type_document',
+        'birthday',
         'deleted',
         'date_created',
         'date_updated'
