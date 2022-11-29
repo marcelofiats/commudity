@@ -15,7 +15,29 @@
                     <p>Cultura: {{ $culture->name }}</p>
                     <p>Tipo Unidade: {{ $culture->unit_type->name ?? 'Não definido' }} - {{ $culture->unit_type->sigle ?? 'N/A' }}</p>
                     <br/>
+
+                    <p>Historico de Preço:</p>
                     @if (isset($culture->activities) && count($culture->activities) > 0)
+
+                        @php    
+                            $yearLast = 0;
+                        @endphp
+
+                        @foreach($culture->activities as $activity)
+
+                            @if ($yearLast != $activity->year)
+                                <div>
+                                    <p>Ano: {{ $activity->year }} Preço: {{ $activity->unit_price }}</p> 
+                                </div>
+
+                                @php
+                                    $yearLast = $activity->year;
+                                @endphp
+                            @endif
+
+                        @endforeach
+
+                        <hr/>
                         @foreach($culture->activities as $activity) 
                         <div>
                             <p>Ano: {{ $activity->year }}</p> 

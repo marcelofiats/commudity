@@ -15,6 +15,7 @@ return new class extends Migration
     {
         Schema::create('activities', function (Blueprint $table) {
             $table->increments('id');
+            $table->double('unit_price', 8, 2);
             $table->double('quantity', 15, 3);
             $table->integer('year')->nullable();
             $table->double('area', 15, 2);

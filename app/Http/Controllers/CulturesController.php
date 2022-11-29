@@ -25,7 +25,11 @@ class CulturesController extends Controller
         $titlePage = 'Detalhes';
 
         $culture =  Culture::where('id', $id_culture)
-        ->with(['unit_type', 'activities', 'activities.farms', 'activities.farms.producer'])
+        ->with('unit_type')
+        ->with(['activities.farms', 'activities.farms.producer'])
+        ->with(['activities' => function($activity){
+            $activity->orderBy('year', 'asc');
+        }])
         ->get()->first();
 
         return view('detailsCulture')->with(compact('titlePage', 'culture'));
