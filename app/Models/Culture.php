@@ -21,7 +21,7 @@ class Culture extends Model
 
     function unit_type() 
     {
-        return $this->hasOne("App\Models\UnitType", 'id');
+        return $this->belongsTo("App\Models\UnitType", 'id_unit_type');
     }
 
     function activities() 

@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Activity;
+use App\Models\Farm;
 use App\Models\Culture;
+use App\Models\Activity;
 use App\Models\Cultures;
 use Illuminate\Http\Request;
 
@@ -24,9 +25,8 @@ class CulturesController extends Controller
         $titlePage = 'Detalhes';
 
         $culture =  Culture::where('id', $id_culture)
-            ->with('activities')
-            ->with('unit_type')
-            ->get();
+        ->with(['unit_type', 'activities', 'activities.farms', 'activities.farms.producer'])
+        ->get()->first();
 
         return view('detailsCulture')->with(compact('titlePage', 'culture'));
     }

@@ -22,7 +22,7 @@ class Activity extends Model
     ];
 
     function Farms() {
-        return $this->belongsToMany("App\Models\Farm", "farms_activities", 'id_activity');
+        return $this->belongsToMany("App\Models\Farm", "farms_activities", 'id_activity', 'id_farm');
     }
 
     function Culture() 

@@ -19,7 +19,7 @@ class UnitType extends Model
     ];
 
     public function Culture() {
-        return $this->belongsTo('App\Models\Culture', 'id_culture');
+        return $this->hasOne('App\Models\Culture', 'id_unit_type');
     }
 
 }

@@ -49,7 +49,7 @@ class FarmActivitySeeder extends Seeder
                 'id_activity' => 7
             ],
             [
-                'id_farm' => 1,
+                'id_farm' => 3,
                 'id_activity' => 13
             ],
             [
@@ -62,7 +62,7 @@ class FarmActivitySeeder extends Seeder
             ],
             [
                 'id_farm' => 5,
-                'id_activity' => 16
+                'id_activity' => 8
             ],
             [
                 'id_farm' => 5,
@@ -75,6 +75,26 @@ class FarmActivitySeeder extends Seeder
             [
                 'id_farm' => 6,
                 'id_activity' => 7
+            ],
+            [
+                'id_farm' => 6,
+                'id_activity' => 10
+            ],
+            [
+                'id_farm' => 3,
+                'id_activity' => 12
+            ],
+            [
+                'id_farm' => 2,
+                'id_activity' => 14
+            ],
+            [
+                'id_farm' => 6,
+                'id_activity' => 16
+            ],
+            [
+                'id_farm' => 5,
+                'id_activity' => 17
             ],
         ]);
     }

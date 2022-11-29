@@ -45,7 +45,7 @@ class CultureSeeder extends Seeder
                 'id_unit_type' => 1
             ],
             [
-                'name' => 'Cana de Açucar',
+                'name' => 'Cana',
                 'id_unit_type' => 1
             ]           
             

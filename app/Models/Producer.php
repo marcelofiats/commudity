@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Producer extends Model
 {
@@ -21,4 +22,8 @@ class Producer extends Model
         'date_created',
         'date_updated'
     ];
+
+    public function Farm() {
+        return $this->hasMany('App\Models\Farm', 'id_producer');
+    }
 }

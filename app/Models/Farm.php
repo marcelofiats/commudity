@@ -19,7 +19,11 @@ class Farm extends Model
         'id_producer'
     ];
 
-    function activity() {
-        return $this->belongsToMany("App\Models\Activity", "farms_activities");
+    function activities() {
+        return $this->belongsToMany("App\Models\Activity", "farms_activities", 'id_farm', 'id_activity');
+    }
+
+    function producer() {
+        return $this->belongsTo("App\Models\Producer", 'id_producer');
     }
 }
