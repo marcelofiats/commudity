@@ -17,7 +17,7 @@ class ActivitySeeder extends Seeder
     {
         DB::table('activities')->insert([
             [
-                'year' => '2021',
+                'year' => '2018',
                 'area' => '12000',
                 'quantity' => '14000',
                 'id_culture' => 1
@@ -29,7 +29,7 @@ class ActivitySeeder extends Seeder
                 'id_culture' => 1
             ],
             [
-                'year' => '2021',
+                'year' => '2018',
                 'area' => '2000',
                 'quantity' => '3460',
                 'id_culture' => 1
